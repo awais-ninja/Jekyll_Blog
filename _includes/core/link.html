@@ -1,0 +1,9 @@
+{% assign link = include.link %}
+{% assign text = include.text %}
+{% assign firstfour = link | slice: 0, 4 %}
+
+{% if firstfour == "http" %}
+    <a href="{{ link }}" target="_blank" rel="noreferrer" class="{{ include.class }}">{{ text }}</a>
+{% else %}
+    <a href="{{ link }}" class="{{ include.class }}">{{ text }}</a>
+{% endif %}
